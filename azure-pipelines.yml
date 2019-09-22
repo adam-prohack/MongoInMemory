@@ -8,6 +8,7 @@ pool:
 
 steps:
   - task: DotNetCoreCLI@2
+    displayName: "Build and pack library"
     inputs:
       command: 'pack'
       packagesToPack: '**/*.csproj'
@@ -16,9 +17,11 @@ steps:
       versioningScheme: 'byBuildNumber'
       verbosityPack: 'Normal'
   - task: NuGetToolInstaller@1
+    displayName: "Use nuget 4.1.* version"
     inputs:
       versionSpec: '4.1.*'
   - task: DotNetCoreCLI@2
+    displayName: "Push package to nuget.org"
     inputs:
       command: 'push'
       packagesToPush: '$(Build.ArtifactStagingDirectory)/*.nupkg'

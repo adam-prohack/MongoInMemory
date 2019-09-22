@@ -15,6 +15,9 @@ steps:
       includesource: true
       versioningScheme: 'byBuildNumber'
       verbosityPack: 'Normal'
+  - task: NuGetToolInstaller@1
+    inputs:
+      versionSpec: '4.1.*'
   - task: DotNetCoreCLI@2
     inputs:
       command: 'push'

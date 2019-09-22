@@ -1,4 +1,4 @@
-﻿namespace MongoInMemory.MongoDbServer
+﻿namespace MongoInMemory.MongoDbServerProcess
 {
     public class MongoDbServerDescriptor
     {

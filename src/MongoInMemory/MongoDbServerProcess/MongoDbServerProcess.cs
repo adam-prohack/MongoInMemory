@@ -1,12 +1,13 @@
 ﻿using MongoInMemory.ProcessExecutor;
 
-namespace MongoInMemory.MongoDbServer
+namespace MongoInMemory.MongoDbServerProcess
 {
-    public class MongoDbServerProcess : IProcess
+    internal class MongoDbServerProcess : IProcess
     {
         public string WorkingDirectory { get; set; }
         public string FileName { get; set; }
         public string Arguments { get; set; }
-        public int ServerPort { get; internal set; }
+        public int ServerPort { get; set; }
+        public string ServerHost { get; set; }
     }
 }

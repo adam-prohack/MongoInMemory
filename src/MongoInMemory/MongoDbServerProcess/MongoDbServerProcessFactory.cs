@@ -2,9 +2,9 @@
 using System;
 using System.IO;
 
-namespace MongoInMemory.MongoDbServer
+namespace MongoInMemory.MongoDbServerProcess
 {
-    public class MongoDbServerProcessFactory
+    internal class MongoDbServerProcessFactory
     {
         private string getTempWorkingDirectory()
         {
@@ -24,21 +24,23 @@ namespace MongoInMemory.MongoDbServer
             else
                 throw new NotSupportedException($"Current operating system is not supported");
         }
-        private string getMongoDbServerArguments(int port, string cwd)
+        private string getMongoDbServerArguments(int port, string ipAddress, string cwd)
         {
-            return $"--port {port} --bind_ip 127.0.0.1 --dbpath {cwd}";
+            return $"--port {port} --bind_ip {ipAddress} --dbpath {cwd}";
         }
 
         public MongoDbServerProcess CreateMongoDbServerProcess()
         {
+            var host = "127.0.0.1";
             var port = PortUtils.GetFreePortNumber();
             var workingDirectory = getTempWorkingDirectory();
             return new MongoDbServerProcess()
             {
                 WorkingDirectory = workingDirectory,
                 FileName = getMongoDbDeamonPath(),
-                Arguments = getMongoDbServerArguments(port, workingDirectory),
-                ServerPort = port
+                Arguments = getMongoDbServerArguments(port, host, workingDirectory),
+                ServerPort = port,
+                ServerHost = host
             };
         }
     }

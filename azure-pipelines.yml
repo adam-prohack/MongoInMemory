@@ -1,0 +1,23 @@
+name: 1.$(Date:yy).$(Date:MM)$(Rev:.r)-$(BuildVersionSuffix)
+
+trigger:
+- master
+
+pool:
+  vmImage: 'windows-latest'
+
+steps:
+  - task: DotNetCoreCLI@2
+    inputs:
+      command: 'pack'
+      packagesToPack: '**/*.csproj'
+      includesymbols: true
+      includesource: true
+      versioningScheme: 'byBuildNumber'
+      verbosityPack: 'Normal'
+  - task: DotNetCoreCLI@2
+    inputs:
+      command: 'push'
+      packagesToPush: '$(Build.ArtifactStagingDirectory)/*.nupkg'
+      nuGetFeedType: 'external'
+      publishFeedCredentials: 'MongoInMemoryNuget'

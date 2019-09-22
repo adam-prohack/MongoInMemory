@@ -20,10 +20,10 @@ steps:
     displayName: "Use nuget 4.1.* version"
     inputs:
       versionSpec: '4.1.*'
-  - task: DotNetCoreCLI@2
+  - task: NuGetCommand@2
     displayName: "Push package to nuget.org"
     inputs:
       command: 'push'
-      packagesToPush: '$(Build.ArtifactStagingDirectory)/*.nupkg'
+      packagesToPush: '$(Build.ArtifactStagingDirectory)/**/*.nupkg;!$(Build.ArtifactStagingDirectory)/**/*.symbols.nupkg'
       nuGetFeedType: 'external'
       publishFeedCredentials: 'MongoInMemoryNuget'

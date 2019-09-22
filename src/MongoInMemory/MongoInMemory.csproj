@@ -1,0 +1,46 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Library</OutputType>    
+    <TargetFramework>netcoreapp2.0</TargetFramework>
+    <RuntimeIdentifiers>win10;ubuntu.18.04;osx</RuntimeIdentifiers>
+    <Platforms>AnyCPU;x64;x86</Platforms>
+    <Authors>Adam Brzozowski and contributors</Authors>
+    <Company>Adam Brzozowski</Company>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <MongoDbVersion>4.2.0</MongoDbVersion>
+    <MongoDbWindows10Infix>win32-x86_64-2012plus</MongoDbWindows10Infix>
+    <MongoDbUbuntu1804Infix>linux-x86_64-ubuntu1804</MongoDbUbuntu1804Infix>
+    <MongoDbMacOSInfix>macos-x86_64</MongoDbMacOSInfix>
+    <ApplicationIcon />
+    <StartupObject />
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Include="../../resources/mongodb-$(MongoDbWindows10Infix)-$(MongoDbVersion)/bin/mongod.exe" Pack="true">
+      <PackagePath>contentFiles/any/$(TargetFramework)/resources/mongodb-$(MongoDbWindows10Infix)/</PackagePath>
+      <Link>resources/$(MongoDbWindows10Infix)/mongod.exe</Link>
+      <PackageCopyToOutput>true</PackageCopyToOutput>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="../../resources/mongodb-$(MongoDbUbuntu1804Infix)-$(MongoDbVersion)/bin/mongod" Pack="true">
+      <PackagePath>contentFiles/any/$(TargetFramework)/resources/$(MongoDbUbuntu1804Infix)/</PackagePath>
+      <Link>resources/$(MongoDbUbuntu1804Infix)/mongod</Link>
+      <PackageCopyToOutput>true</PackageCopyToOutput>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="../../resources/mongodb-$(MongoDbMacOSInfix)-$(MongoDbVersion)/bin/mongod" Pack="true">
+      <PackagePath>contentFiles/any/$(TargetFramework)/resources/$(MongoDbMacOSInfix)/</PackagePath>
+      <Link>resources/$(MongoDbMacOSInfix)/mongod</Link>
+      <PackageCopyToOutput>true</PackageCopyToOutput>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="MongoDB.Driver" Version="2.9.1" />
+  </ItemGroup>
+
+</Project>

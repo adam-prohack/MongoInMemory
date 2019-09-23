@@ -23,17 +23,17 @@
   </ItemGroup>
 
   <ItemGroup>
-    <None Include="../../resources/mongodb-$(MongoDbWindows10Infix)-$(MongoDbVersion)/bin/mongod.exe" Pack="true" PackagePath="contentFiles/any/any/resources/mongodb-$(MongoDbWindows10Infix)/mongod.exe">
+    <None Include="../../resources/mongodb-$(MongoDbWindows10Infix)-$(MongoDbVersion)/bin/mongod.exe" Pack="true" PackagePath="contentFiles/any/any/resources/mongodb-$(MongoDbWindows10Infix)/">
       <Link>resources/mongodb-$(MongoDbWindows10Infix)/mongod.exe</Link>
       <PackageCopyToOutput>true</PackageCopyToOutput>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="../../resources/mongodb-$(MongoDbUbuntu1804Infix)-$(MongoDbVersion)/bin/mongod" Pack="true" PackagePath="contentFiles/any/any/resources/mongodb-$(MongoDbUbuntu1804Infix)/mongod">
+    <None Include="../../resources/mongodb-$(MongoDbUbuntu1804Infix)-$(MongoDbVersion)/bin/mongod" Pack="true" PackagePath="contentFiles/any/any/resources/mongodb-$(MongoDbUbuntu1804Infix)/">
       <Link>resources/mongodb-$(MongoDbUbuntu1804Infix)/mongod</Link>
       <PackageCopyToOutput>true</PackageCopyToOutput>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="../../resources/mongodb-$(MongoDbMacOSInfix)-$(MongoDbVersion)/bin/mongod" Pack="true" PackagePath="contentFiles/any/any/resources/mongodb-$(MongoDbMacOSInfix)/mongod">
+    <None Include="../../resources/mongodb-$(MongoDbMacOSInfix)-$(MongoDbVersion)/bin/mongod" Pack="true" PackagePath="contentFiles/any/any/resources/mongodb-$(MongoDbMacOSInfix)/">
       <Link>resources/mongodb-$(MongoDbMacOSInfix)/mongod</Link>
       <PackageCopyToOutput>true</PackageCopyToOutput>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>

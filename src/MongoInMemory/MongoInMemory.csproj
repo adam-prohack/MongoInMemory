@@ -2,7 +2,7 @@
 
   <PropertyGroup>
     <OutputType>Library</OutputType>
-    <TargetFramework>netcoreapp2.0</TargetFramework>
+    <TargetFrameworks>netcoreapp2.0;netstandard2.0</TargetFrameworks>
     <RuntimeIdentifiers>win10;ubuntu.18.04;osx</RuntimeIdentifiers>
     <Platforms>AnyCPU;x64;x86</Platforms>
     <Authors>Adam Brzozowski and contributors</Authors>
@@ -23,23 +23,20 @@
   </ItemGroup>
 
   <ItemGroup>
-    <None Include="../../resources/mongodb-$(MongoDbWindows10Infix)-$(MongoDbVersion)/bin/mongod.exe" Pack="true">
-      <PackagePath>contentFiles/any/$(TargetFramework)/resources/mongodb-$(MongoDbWindows10Infix)/</PackagePath>
+    <None Include="../../resources/mongodb-$(MongoDbWindows10Infix)-$(MongoDbVersion)/bin/mongod.exe" Pack="true" PackagePath="contentFiles/any/any/resources/mongodb-$(MongoDbWindows10Infix)/mongod.exe">
       <Link>resources/mongodb-$(MongoDbWindows10Infix)/mongod.exe</Link>
       <PackageCopyToOutput>true</PackageCopyToOutput>
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="../../resources/mongodb-$(MongoDbUbuntu1804Infix)-$(MongoDbVersion)/bin/mongod" Pack="true">
-      <PackagePath>contentFiles/any/$(TargetFramework)/resources/mongodb-$(MongoDbUbuntu1804Infix)/</PackagePath>
+    <None Include="../../resources/mongodb-$(MongoDbUbuntu1804Infix)-$(MongoDbVersion)/bin/mongod" Pack="true" PackagePath="contentFiles/any/any/resources/mongodb-$(MongoDbUbuntu1804Infix)/mongod">
       <Link>resources/mongodb-$(MongoDbUbuntu1804Infix)/mongod</Link>
       <PackageCopyToOutput>true</PackageCopyToOutput>
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="../../resources/mongodb-$(MongoDbMacOSInfix)-$(MongoDbVersion)/bin/mongod" Pack="true">
-      <PackagePath>contentFiles/any/$(TargetFramework)/resources/mongodb-$(MongoDbMacOSInfix)/</PackagePath>
+    <None Include="../../resources/mongodb-$(MongoDbMacOSInfix)-$(MongoDbVersion)/bin/mongod" Pack="true" PackagePath="contentFiles/any/any/resources/mongodb-$(MongoDbMacOSInfix)/mongod">
       <Link>resources/mongodb-$(MongoDbMacOSInfix)/mongod</Link>
       <PackageCopyToOutput>true</PackageCopyToOutput>
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
   </ItemGroup>
 

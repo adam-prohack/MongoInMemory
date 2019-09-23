@@ -1,8 +1,6 @@
-﻿using System;
-
-namespace MongoInMemory.ConnectionMonitor
+﻿namespace MongoInMemory.ConnectionMonitor
 {
-    class MongoDbConnectionMonitorFactory
+    internal class MongoDbConnectionMonitorFactory
     {
         public IMongoDbConnectionMonitor CreateMongoDbConnectionMonitor()
         {

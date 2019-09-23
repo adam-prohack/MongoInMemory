@@ -1,6 +1,6 @@
 ﻿namespace MongoInMemory.ConnectionMonitor
 {
-    public interface IMongoDbConnectionMonitor
+    internal interface IMongoDbConnectionMonitor
     {
         void WaitForMongoDbServer(string host, int port);
     }

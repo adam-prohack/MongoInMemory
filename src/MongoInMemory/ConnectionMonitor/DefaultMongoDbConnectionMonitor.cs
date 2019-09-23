@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace MongoInMemory.ConnectionMonitor
 {
-    class DefaultMongoDbConnectionMonitor : IMongoDbConnectionMonitor
+    internal class DefaultMongoDbConnectionMonitor : IMongoDbConnectionMonitor
     {
         private readonly static TimeSpan Timeout = TimeSpan.FromSeconds(30);
 

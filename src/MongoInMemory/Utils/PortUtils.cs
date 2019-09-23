@@ -3,7 +3,7 @@ using System.Net.Sockets;
 
 namespace MongoInMemory.Utils
 {
-    public static class PortUtils
+    internal static class PortUtils
     {
         public static int GetFreePortNumber()
         {

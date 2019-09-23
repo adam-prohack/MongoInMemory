@@ -23,6 +23,7 @@ namespace MongoInMemory.MongoDbServerProcess
             {
                 Directory.GetCurrentDirectory(),
                 Path.GetDirectoryName(Assembly.GetAssembly(typeof(MongoDbServerProcessFactory)).Location),
+                Path.Combine(Path.GetDirectoryName(Assembly.GetAssembly(typeof(MongoDbServerProcessFactory)).Location), "..", "..", "contentFiles", "any", "any"),
                 Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location),
                 Path.GetDirectoryName(Assembly.GetEntryAssembly().Location),
                 Path.GetDirectoryName(Assembly.GetCallingAssembly().Location)
@@ -37,7 +38,7 @@ namespace MongoInMemory.MongoDbServerProcess
                 else if (Environment.OSVersion.Platform == PlatformID.Unix && Environment.OSVersion.VersionString.ToLower().Contains("osx"))
                     resultPath = Path.Combine(basePath, "resources", "mongodb-macos-x86_64", "mongod");
                 else
-                    throw new NotSupportedException($"Current operating system is not supported");                
+                    throw new NotSupportedException($"Current operating system is not supported");
                 if (File.Exists(resultPath)) { return resultPath; }
             }
             throw new FileNotFoundException($"Couldn't find mongod file");

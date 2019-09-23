@@ -7,8 +7,8 @@
     <Platforms>AnyCPU;x64;x86</Platforms>
     <Authors>Adam Brzozowski and contributors</Authors>
     <Company>Adam Brzozowski</Company>
-    <IncludeSymbols>true</IncludeSymbols>    
-    <SymbolPackageFormat>snupkg</SymbolPackageFormat>    
+    <IncludeSymbols>true</IncludeSymbols>
+    <SymbolPackageFormat>snupkg</SymbolPackageFormat>
   </PropertyGroup>
 
   <PropertyGroup>
@@ -19,31 +19,28 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Include="../../resources/mongodb-$(MongoDbWindows10Infix)-$(MongoDbVersion)/bin/mongod.exe" Pack="true">
-      <PackagePath>contentFiles/any/$(TargetFramework)/resources/mongodb-$(MongoDbWindows10Infix)/</PackagePath>
-      <Link>resources/$(MongoDbWindows10Infix)/mongod.exe</Link>
-      <PackageCopyToOutput>true</PackageCopyToOutput>
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-      <Visible>false</Visible>
-    </None>
-    <None Include="../../resources/mongodb-$(MongoDbUbuntu1804Infix)-$(MongoDbVersion)/bin/mongod" Pack="true">
-      <PackagePath>contentFiles/any/$(TargetFramework)/resources/mongodb-$(MongoDbUbuntu1804Infix)/</PackagePath>
-      <Link>resources/$(MongoDbUbuntu1804Infix)/mongod</Link>
-      <PackageCopyToOutput>true</PackageCopyToOutput>
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-      <Visible>false</Visible>
-    </None>
-    <None Include="../../resources/mongodb-$(MongoDbMacOSInfix)-$(MongoDbVersion)/bin/mongod" Pack="true">
-      <PackagePath>contentFiles/any/$(TargetFramework)/resources/mongodb-$(MongoDbMacOSInfix)/</PackagePath>
-      <Link>resources/$(MongoDbMacOSInfix)/mongod</Link>
-      <PackageCopyToOutput>true</PackageCopyToOutput>
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-      <Visible>false</Visible>
-    </None>
+    <PackageReference Include="MongoDB.Driver" Version="2.9.1" />
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="MongoDB.Driver" Version="2.9.1" />
+    <None Include="../../resources/mongodb-$(MongoDbWindows10Infix)-$(MongoDbVersion)/bin/mongod.exe" Pack="true">
+      <PackagePath>contentFiles/any/$(TargetFramework)/resources/mongodb-$(MongoDbWindows10Infix)/</PackagePath>
+      <Link>resources/mongodb-$(MongoDbWindows10Infix)/mongod.exe</Link>
+      <PackageCopyToOutput>true</PackageCopyToOutput>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="../../resources/mongodb-$(MongoDbUbuntu1804Infix)-$(MongoDbVersion)/bin/mongod" Pack="true">
+      <PackagePath>contentFiles/any/$(TargetFramework)/resources/mongodb-$(MongoDbUbuntu1804Infix)/</PackagePath>
+      <Link>resources/mongodb-$(MongoDbUbuntu1804Infix)/mongod</Link>
+      <PackageCopyToOutput>true</PackageCopyToOutput>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="../../resources/mongodb-$(MongoDbMacOSInfix)-$(MongoDbVersion)/bin/mongod" Pack="true">
+      <PackagePath>contentFiles/any/$(TargetFramework)/resources/mongodb-$(MongoDbMacOSInfix)/</PackagePath>
+      <Link>resources/mongodb-$(MongoDbMacOSInfix)/mongod</Link>
+      <PackageCopyToOutput>true</PackageCopyToOutput>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
 
 </Project>

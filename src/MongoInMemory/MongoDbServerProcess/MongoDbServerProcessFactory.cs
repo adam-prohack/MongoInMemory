@@ -37,20 +37,10 @@ namespace MongoInMemory.MongoDbServerProcess
                 else if (Environment.OSVersion.Platform == PlatformID.Unix && Environment.OSVersion.VersionString.ToLower().Contains("osx"))
                     resultPath = Path.Combine(basePath, "resources", "mongodb-macos-x86_64", "mongod");
                 else
-                    throw new NotSupportedException($"Current operating system is not supported");
-                Debug.WriteLine(resultPath);
+                    throw new NotSupportedException($"Current operating system is not supported");                
                 if (File.Exists(resultPath)) { return resultPath; }
             }
             throw new FileNotFoundException($"Couldn't find mongod file");
-
-            //if (Environment.OSVersion.Platform == PlatformID.Win32NT)
-            //    return Path.Combine(libAssemblyLocation, "resources", "win32-x86_64-2012plus", "mongod.exe");
-            //else if (Environment.OSVersion.Platform == PlatformID.Unix && Environment.OSVersion.VersionString.ToLower().Contains("ubuntu"))
-            //    return Path.Combine(libAssemblyLocation, "resources", "linux-x86_64-ubuntu1804", "mongod");
-            //else if (Environment.OSVersion.Platform == PlatformID.Unix && Environment.OSVersion.VersionString.ToLower().Contains("osx"))
-            //    return Path.Combine(libAssemblyLocation, "resources", "macos-x86_64", "mongod");
-            //else
-            //    throw new NotSupportedException($"Current operating system is not supported");
         }
         private string getMongoDbServerArguments(int port, string ipAddress, string cwd)
         {

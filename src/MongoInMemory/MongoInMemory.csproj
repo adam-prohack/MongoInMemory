@@ -23,17 +23,20 @@
   </ItemGroup>
 
   <ItemGroup>
-    <None Include="../../resources/mongodb-$(MongoDbWindows10Infix)-$(MongoDbVersion)/bin/mongod.exe" Pack="true" PackagePath="contentFiles/any/any/resources/mongodb-$(MongoDbWindows10Infix)/">
+    <None Include="*.targets;*.props" Pack="True" PackagePath="build\netcoreapp3.1\" />
+    <None Include="*.targets;*.props" Pack="True" PackagePath="build\netcoreapp2.2\" />
+    <None Include="*.targets;*.props" Pack="True" PackagePath="build\netstandard2.0\" />
+    <None Include="../../resources/mongodb-$(MongoDbWindows10Infix)-$(MongoDbVersion)/bin/mongod.exe" Pack="true" PackagePath="contentFiles/resources/mongodb-$(MongoDbWindows10Infix)/">
       <Link>resources/mongodb-$(MongoDbWindows10Infix)/mongod.exe</Link>
       <PackageCopyToOutput>true</PackageCopyToOutput>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="../../resources/mongodb-$(MongoDbUbuntu1804Infix)-$(MongoDbVersion)/bin/mongod" Pack="true" PackagePath="contentFiles/any/any/resources/mongodb-$(MongoDbUbuntu1804Infix)/">
+    <None Include="../../resources/mongodb-$(MongoDbUbuntu1804Infix)-$(MongoDbVersion)/bin/mongod" Pack="true" PackagePath="contentFiles/resources/mongodb-$(MongoDbUbuntu1804Infix)/">
       <Link>resources/mongodb-$(MongoDbUbuntu1804Infix)/mongod</Link>
       <PackageCopyToOutput>true</PackageCopyToOutput>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="../../resources/mongodb-$(MongoDbMacOSInfix)-$(MongoDbVersion)/bin/mongod" Pack="true" PackagePath="contentFiles/any/any/resources/mongodb-$(MongoDbMacOSInfix)/">
+    <None Include="../../resources/mongodb-$(MongoDbMacOSInfix)-$(MongoDbVersion)/bin/mongod" Pack="true" PackagePath="contentFiles/resources/mongodb-$(MongoDbMacOSInfix)/">
       <Link>resources/mongodb-$(MongoDbMacOSInfix)/mongod</Link>
       <PackageCopyToOutput>true</PackageCopyToOutput>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>

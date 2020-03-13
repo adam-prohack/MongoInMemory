@@ -2,7 +2,7 @@
 
   <PropertyGroup>
     <OutputType>Library</OutputType>
-    <TargetFrameworks>netcoreapp2.0;netstandard2.0</TargetFrameworks>
+    <TargetFrameworks>netcoreapp3.1;netcoreapp2.0;netstandard2.0</TargetFrameworks>
     <RuntimeIdentifiers>win10;ubuntu.18.04;osx</RuntimeIdentifiers>
     <Platforms>AnyCPU;x64;x86</Platforms>
     <Authors>Adam Brzozowski and contributors</Authors>
@@ -19,7 +19,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="MongoDB.Driver" Version="2.9.1" />
+    <PackageReference Include="MongoDB.Driver" Version="2.10.2" />
   </ItemGroup>
 
   <ItemGroup>

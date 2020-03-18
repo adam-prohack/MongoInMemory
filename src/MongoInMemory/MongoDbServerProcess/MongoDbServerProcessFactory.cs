@@ -1,7 +1,6 @@
 ﻿using MongoInMemory.Utils;
 using System;
 using System.Collections.Generic;
-using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Reflection;
@@ -12,7 +11,7 @@ namespace MongoInMemory.MongoDbServerProcess
     {
         private string getTempWorkingDirectory()
         {
-            var tempPath = Path.Combine(Path.GetTempPath(), Guid.NewGuid().ToString());
+            var tempPath = Path.Combine(Directory.GetCurrentDirectory(), ".mongod");
             if (Directory.Exists(tempPath)) { Directory.Delete(tempPath, true); }
             Directory.CreateDirectory(tempPath);
             return tempPath;
